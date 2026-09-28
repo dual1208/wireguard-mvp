@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "project": "wgmvp",
+  "architecture": "trusted-hub-isolated-netns",
+  "management_facts": {
+    "local_subnet": "192.168.0.0/16",
+    "villa_ssh": "root@192.168.1.93",
+    "gpu_ssh_local_alias": "gpuxtcp",
+    "cave_ssh_alias_on_gpu": "rt",
+    "gz_ssh_local_alias": "gz",
+    "independent_local_internet_and_gpu_access_user_stated": true
+  },
+  "policy": {
+    "trusted_gz_hub": true,
+    "payload_ipv4_only": true,
+    "router_management_over_tunnel": false,
+    "lan_forwarding": false,
+    "default_route_changes": false,
+    "host_gz_forwarding_changes": false,
+    "public_tcp_forwarding": false,
+    "allow_router_reboot": false
+  },
+  "plan": {
+    "overlay_pool": "10.203.77.0/29",
+    "overlay_addresses": {
+      "gz": "10.203.77.1/32",
+      "villa": "10.203.77.2/32",
+      "cave": "10.203.77.3/32"
+    },
+    "interface": "wgmvp",
+    "gz_namespace": "wgmvp",
+    "gz_public_ipv4": null,
+    "outer_udp_port": 51820,
+    "persistent_keepalive_seconds": 25,
+    "mtu": null,
+    "rollback_lease_seconds": 300
+  },
+  "observed": {
+    "existing_ipv4_prefixes": [
+      "192.168.0.0/16"
+    ],
+    "note": "Incomplete. Collect all relevant existing non-default prefixes and policy conflicts before validation.",
+    "villa_version": null,
+    "cave_version": null,
+    "gz_os": null,
+    "gz_public_endpoint_evidence": null
+  },
+  "checks": {
+    "identities_verified": false,
+    "inventory_complete": false,
+    "all_route_tables_and_namespaces_reviewed": false,
+    "overlay_conflicts_reviewed": false,
+    "proxy_interception_reviewed": false,
+    "existing_public_exposure_reviewed": false,
+    "host_namespace_forwarding_unchanged_planned": false,
+    "kernel_and_package_compatibility_verified": false,
+    "namespace_support_verified": false,
+    "outer_udp_paths_verified": false,
+    "port_available_or_project_owned": false,
+    "independent_management_verified": false,
+    "rollback_ready": false,
+    "mtu_validated": false
+  }
+}

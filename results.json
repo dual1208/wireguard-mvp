@@ -1,0 +1,670 @@
+{
+  "generated_at": "2026-09-27T14:32:56.711520+00:00",
+  "deployment": "STOPPED at explicit user request: gz UDP51820 absent, namespace/interface removed, cloud allowance revoked; router-to-router tunnel disconnected",
+  "acceptance_scope": "User explicitly deferred extended acceptance and performance testing; NOT_RUN is not PASS.",
+  "complete_acceptance": false,
+  "tests": [
+    {
+      "id": "A01",
+      "status": "PASS",
+      "observed_at": "2026-09-27T14:28:29.543322+00:00",
+      "host_namespace": "Villa, GPU, Cave and gz / management hosts; local HTTPS",
+      "expected": "See ACCEPTANCE.md A01",
+      "observed": "villa fresh SSH: PASS; gpu fresh SSH: PASS; cave fresh SSH: PASS; gz fresh SSH: PASS; gz reviewed identity: PASS; villa reviewed identity: PASS; cave reviewed identity: PASS; GPU-local rt resolution: PASS; independent HTTPS: PASS",
+      "evidence_files": [
+        "villa.json",
+        "gpu.json",
+        "cave.json",
+        "gz.json",
+        "internet.json"
+      ],
+      "checks": [
+        {
+          "name": "villa fresh SSH",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "gpu fresh SSH",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "cave fresh SSH",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "gz fresh SSH",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "gz reviewed identity",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "villa reviewed identity",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "cave reviewed identity",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "GPU-local rt resolution",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "independent HTTPS",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        }
+      ],
+      "limitations": [
+        "GPU identity uses the user's existing strict SSH host-key trust; the three deployment hosts also match explicit inventory fingerprints."
+      ]
+    },
+    {
+      "id": "A02",
+      "status": "PASS",
+      "observed_at": "2026-09-27T14:28:29.545049+00:00",
+      "host_namespace": "Villa, GPU, Cave and gz / host routes",
+      "expected": "See ACCEPTANCE.md A02",
+      "observed": "Privileged discovery reviewed all host/process namespaces, route tables and proxy policies; current routes match the non-overlapping pool.",
+      "evidence_files": [
+        "PLAN.md",
+        ".local/audit/"
+      ],
+      "checks": [
+        {
+          "name": "recorded non-overlap",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "villa current host prefixes/routes",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "gpu current host prefixes/routes",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "cave current host prefixes/routes",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "gz current host prefixes/routes",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        }
+      ],
+      "limitations": [
+        "Current host routes were checked; all namespaces, local VPNs, proxy/TC policies and recovery destinations still require the recorded discovery review. Inventory attestations are not fresh packet-path proof."
+      ]
+    },
+    {
+      "id": "A03",
+      "status": "PASS",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md A03",
+      "observed": "Both native kernel WireGuard links authenticate and carry the successful bidirectional router traffic. The single cloud UDP allowance corrected the missing ingress prerequisite.",
+      "evidence_files": [
+        ".local/runs/20260927T142643Z-lewv6jmf/acceptance/20260927T142824Z-ygk0a_0q",
+        "tools/cloud_gate.py",
+        ".local/cloud/state.json"
+      ],
+      "checks": [],
+      "limitations": [
+        "Outside this runner's read-only structural and bounded ICMP scope."
+      ]
+    },
+    {
+      "id": "A04",
+      "status": "PASS",
+      "observed_at": "2026-09-27T14:28:29.546320+00:00",
+      "host_namespace": "gz / host and wgmvp namespace",
+      "expected": "See ACCEPTANCE.md A04",
+      "observed": "only loopback and native WireGuard: PASS; namespace has no default route: PASS; namespace has no TCP/UDP listener: PASS; namespace default-deny policy and no NAT: PASS; hub backend validates permanent configuration: PASS; host has no project prefix route: PASS; host routes unchanged from baseline: PASS; host forwarding unchanged from baseline: PASS",
+      "evidence_files": [
+        "villa.json",
+        "gpu.json",
+        "cave.json",
+        "gz.json",
+        "internet.json"
+      ],
+      "checks": [
+        {
+          "name": "only loopback and native WireGuard",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "namespace has no default route",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "namespace has no TCP/UDP listener",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "namespace default-deny policy and no NAT",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "hub backend validates permanent configuration",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "host has no project prefix route",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "host routes unchanged from baseline",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "host forwarding unchanged from baseline",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "id": "A05",
+      "status": "PASS",
+      "observed_at": "2026-09-27T14:28:50.636127+00:00",
+      "host_namespace": "Villa and Cave / host; gz / wgmvp namespace",
+      "expected": "See ACCEPTANCE.md A05",
+      "observed": "gz owner public identity: PASS; villa owner public identity: PASS; cave owner public identity: PASS; three distinct peer identities: PASS; gz exact peers and AllowedIPs: PASS; gz permanent backend configuration: PASS; villa exact peers and AllowedIPs: PASS; villa permanent backend configuration: PASS; cave exact peers and AllowedIPs: PASS; cave permanent backend configuration: PASS; villa explicit-source zero-loss ping: PASS; cave explicit-source zero-loss ping: PASS; gz both transfer counters increased: PASS; villa both transfer counters increased: PASS; cave both transfer counters increased: PASS",
+      "evidence_files": [
+        "villa.json",
+        "gpu.json",
+        "cave.json",
+        "gz.json",
+        "internet.json",
+        "route-villa.json",
+        "ping-villa.json",
+        "route-cave.json",
+        "ping-cave.json",
+        "transfer-after-gz.json",
+        "transfer-after-villa.json",
+        "transfer-after-cave.json"
+      ],
+      "checks": [
+        {
+          "name": "gz owner public identity",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "villa owner public identity",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "cave owner public identity",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "three distinct peer identities",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "gz exact peers and AllowedIPs",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "gz permanent backend configuration",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "villa exact peers and AllowedIPs",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "villa permanent backend configuration",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "cave exact peers and AllowedIPs",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "cave permanent backend configuration",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "villa explicit-source zero-loss ping",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "cave explicit-source zero-loss ping",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "gz both transfer counters increased",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "villa both transfer counters increased",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "cave both transfer counters increased",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "id": "S01",
+      "status": "NOT_RUN",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md S01",
+      "observed": "Full acceptance procedure intentionally deferred following the user instruction to prioritize delivery and avoid extended testing.",
+      "evidence_files": [],
+      "checks": [],
+      "limitations": [
+        "Some structural/operational evidence exists; the full named acceptance procedure is not claimed."
+      ]
+    },
+    {
+      "id": "S02",
+      "status": "NOT_RUN",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md S02",
+      "observed": "Full acceptance procedure intentionally deferred following the user instruction to prioritize delivery and avoid extended testing.",
+      "evidence_files": [],
+      "checks": [],
+      "limitations": [
+        "Some structural/operational evidence exists; the full named acceptance procedure is not claimed."
+      ]
+    },
+    {
+      "id": "S03",
+      "status": "NOT_RUN",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md S03",
+      "observed": "Full acceptance procedure intentionally deferred following the user instruction to prioritize delivery and avoid extended testing.",
+      "evidence_files": [],
+      "checks": [],
+      "limitations": [
+        "Some structural/operational evidence exists; the full named acceptance procedure is not claimed."
+      ]
+    },
+    {
+      "id": "S04",
+      "status": "PASS",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md S04",
+      "observed": "Structural enforcement: no LAN/default AllowedIPs; dedicated router zone; unconditional project FORWARD drops and early all-destination ingress guard verified by each native backend. No synthetic LAN probe was run.",
+      "evidence_files": [
+        ".local/runs/20260927T142643Z-lewv6jmf/acceptance/20260927T142824Z-ygk0a_0q",
+        "remote/router.sh",
+        "remote/hub.sh"
+      ],
+      "checks": [],
+      "limitations": [
+        "Outside this runner's read-only structural and bounded ICMP scope."
+      ]
+    },
+    {
+      "id": "S05",
+      "status": "PASS",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md S05",
+      "observed": "Earlier isolated equivalent-policy lab: authorized3/3 delivered; spoof3 encrypted arrivals/0 delivered; recovery3/3. Production peer mappings unchanged.",
+      "evidence_files": [
+        ".local/runs/20260927T134633Z-alccg9ew/"
+      ],
+      "checks": [],
+      "limitations": [
+        "Outside this runner's read-only structural and bounded ICMP scope."
+      ]
+    },
+    {
+      "id": "S06",
+      "status": "PASS",
+      "observed_at": "2026-09-27T14:28:29.555550+00:00",
+      "host_namespace": "gz / host and wgmvp namespace",
+      "expected": "See ACCEPTANCE.md S06",
+      "observed": "Scoped listener/NAT/proxy/cloud review found no project public administration/LAN forward. Existing FRP backend is loopback behind authenticated camouflage and FRP authentication; unrelated public Matrix/web services remain unchanged. This is not an audit of every application vulnerability.",
+      "evidence_files": [
+        "PLAN.md",
+        ".local/audit/ecs-gz-security-group.json",
+        ".local/runs/20260927T141819Z-870eedg1/"
+      ],
+      "checks": [
+        {
+          "name": "isolated namespace structural checks",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "host firewall unchanged outside project table",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        }
+      ],
+      "limitations": [
+        "Host firewall/namespace observations do not audit all reverse-proxy configuration or cloud ingress. Existing exposures need separate reviewed evidence."
+      ]
+    },
+    {
+      "id": "S07",
+      "status": "NOT_RUN",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md S07",
+      "observed": "Full acceptance procedure intentionally deferred following the user instruction to prioritize delivery and avoid extended testing.",
+      "evidence_files": [],
+      "checks": [],
+      "limitations": [
+        "Some structural/operational evidence exists; the full named acceptance procedure is not claimed."
+      ]
+    },
+    {
+      "id": "S08",
+      "status": "NOT_RUN",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md S08",
+      "observed": "Full acceptance procedure intentionally deferred following the user instruction to prioritize delivery and avoid extended testing.",
+      "evidence_files": [],
+      "checks": [],
+      "limitations": [
+        "Some structural/operational evidence exists; the full named acceptance procedure is not claimed."
+      ]
+    },
+    {
+      "id": "S09",
+      "status": "PASS",
+      "observed_at": "2026-09-27T14:28:29.555676+00:00",
+      "host_namespace": "Villa, Cave and gz / owner-local files",
+      "expected": "See ACCEPTANCE.md S09",
+      "observed": "Owner-local private keys/backups and permissions verified; local source/evidence scan found no leaked private/PSK material; audit-file permission remediation completed.",
+      "evidence_files": [
+        "SECRET_AUDIT.md",
+        ".local/runs/20260927T142643Z-lewv6jmf/acceptance/20260927T142824Z-ygk0a_0q"
+      ],
+      "checks": [
+        {
+          "name": "gz root-only key/config permissions",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "villa root-only key/config permissions",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "villa restricted host-local backups",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "cave root-only key/config permissions",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        },
+        {
+          "name": "cave restricted host-local backups",
+          "status": "PASS",
+          "detail": "Observed condition matches expectation."
+        }
+      ],
+      "limitations": [
+        "Only permissions and this runner's safe selectors are checked. No private key content is read; absence of secrets from all prior logs, process arguments or other machines is not established."
+      ]
+    },
+    {
+      "id": "S10",
+      "status": "NOT_RUN",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md S10",
+      "observed": "Full acceptance procedure intentionally deferred following the user instruction to prioritize delivery and avoid extended testing.",
+      "evidence_files": [],
+      "checks": [],
+      "limitations": [
+        "Some structural/operational evidence exists; the full named acceptance procedure is not claimed."
+      ]
+    },
+    {
+      "id": "O01",
+      "status": "NOT_RUN",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md O01",
+      "observed": "Full acceptance procedure intentionally deferred following the user instruction to prioritize delivery and avoid extended testing.",
+      "evidence_files": [],
+      "checks": [],
+      "limitations": [
+        "Some structural/operational evidence exists; the full named acceptance procedure is not claimed."
+      ]
+    },
+    {
+      "id": "O02",
+      "status": "NOT_RUN",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md O02",
+      "observed": "Full acceptance procedure intentionally deferred following the user instruction to prioritize delivery and avoid extended testing.",
+      "evidence_files": [],
+      "checks": [],
+      "limitations": [
+        "Some structural/operational evidence exists; the full named acceptance procedure is not claimed."
+      ]
+    },
+    {
+      "id": "O03",
+      "status": "NOT_RUN",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md O03",
+      "observed": "Full acceptance procedure intentionally deferred following the user instruction to prioritize delivery and avoid extended testing.",
+      "evidence_files": [],
+      "checks": [],
+      "limitations": [
+        "Some structural/operational evidence exists; the full named acceptance procedure is not claimed."
+      ]
+    },
+    {
+      "id": "O04",
+      "status": "PASS",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md O04",
+      "observed": "Owned-interface rollback occurred on all three hosts and retained restrictive guards/unrelated settings; cloud exact-ID add/revoke/add succeeded. Full remove was not exercised live.",
+      "evidence_files": [
+        ".local/runs/20260927T141534Z-zenc_op3/",
+        ".local/cloud/"
+      ],
+      "checks": [],
+      "limitations": [
+        "Outside this runner's read-only structural and bounded ICMP scope."
+      ]
+    },
+    {
+      "id": "P01",
+      "status": "NOT_RUN",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md P01",
+      "observed": "Full acceptance procedure intentionally deferred following the user instruction to prioritize delivery and avoid extended testing.",
+      "evidence_files": [],
+      "checks": [],
+      "limitations": [
+        "Some structural/operational evidence exists; the full named acceptance procedure is not claimed."
+      ]
+    },
+    {
+      "id": "P02",
+      "status": "NOT_RUN",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md P02",
+      "observed": "Full acceptance procedure intentionally deferred following the user instruction to prioritize delivery and avoid extended testing.",
+      "evidence_files": [],
+      "checks": [],
+      "limitations": [
+        "Some structural/operational evidence exists; the full named acceptance procedure is not claimed."
+      ]
+    },
+    {
+      "id": "P03",
+      "status": "NOT_RUN",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md P03",
+      "observed": "Full acceptance procedure intentionally deferred following the user instruction to prioritize delivery and avoid extended testing.",
+      "evidence_files": [],
+      "checks": [],
+      "limitations": [
+        "Some structural/operational evidence exists; the full named acceptance procedure is not claimed."
+      ]
+    },
+    {
+      "id": "P04",
+      "status": "NOT_RUN",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md P04",
+      "observed": "Full acceptance procedure intentionally deferred following the user instruction to prioritize delivery and avoid extended testing.",
+      "evidence_files": [],
+      "checks": [],
+      "limitations": [
+        "Some structural/operational evidence exists; the full named acceptance procedure is not claimed."
+      ]
+    },
+    {
+      "id": "P05",
+      "status": "NOT_RUN",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md P05",
+      "observed": "Full acceptance procedure intentionally deferred following the user instruction to prioritize delivery and avoid extended testing.",
+      "evidence_files": [],
+      "checks": [],
+      "limitations": [
+        "Some structural/operational evidence exists; the full named acceptance procedure is not claimed."
+      ]
+    },
+    {
+      "id": "P06",
+      "status": "NOT_RUN",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md P06",
+      "observed": "Full acceptance procedure intentionally deferred following the user instruction to prioritize delivery and avoid extended testing.",
+      "evidence_files": [],
+      "checks": [],
+      "limitations": [
+        "Some structural/operational evidence exists; the full named acceptance procedure is not claimed."
+      ]
+    },
+    {
+      "id": "P07",
+      "status": "NOT_RUN",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md P07",
+      "observed": "Full acceptance procedure intentionally deferred following the user instruction to prioritize delivery and avoid extended testing.",
+      "evidence_files": [],
+      "checks": [],
+      "limitations": [
+        "Some structural/operational evidence exists; the full named acceptance procedure is not claimed."
+      ]
+    },
+    {
+      "id": "P08",
+      "status": "NOT_RUN",
+      "observed_at": null,
+      "host_namespace": null,
+      "expected": "See ACCEPTANCE.md P08",
+      "observed": "Full acceptance procedure intentionally deferred following the user instruction to prioritize delivery and avoid extended testing.",
+      "evidence_files": [],
+      "checks": [],
+      "limitations": [
+        "Some structural/operational evidence exists; the full named acceptance procedure is not claimed."
+      ]
+    }
+  ],
+  "measurements": {
+    "villa": {
+      "direction": "Villa \u2192 Cave",
+      "samples": 3,
+      "lost": 0,
+      "rtt_ms": [
+        16.349,
+        19.107,
+        16.758
+      ],
+      "mean_ms": 17.404666666666667,
+      "median_ms": 16.758,
+      "min_ms": 16.349,
+      "max_ms": 19.107
+    },
+    "cave": {
+      "direction": "Cave \u2192 Villa",
+      "samples": 3,
+      "lost": 0,
+      "rtt_ms": [
+        31.146,
+        16.592,
+        17.187
+      ],
+      "mean_ms": 21.641666666666666,
+      "median_ms": 17.187,
+      "min_ms": 16.592,
+      "max_ms": 31.146
+    }
+  },
+  "throughput": "NOT_RUN",
+  "mtu": {
+    "configured": 1380,
+    "path_maximum_validated": false
+  },
+  "commit_evidence": [
+    ".local/runs/20260927T142922Z-vdjgyhm9/",
+    ".local/runs/20260927T143118Z-t2br2iek/"
+  ],
+  "current_state_evidence": ".local/runs/20260927T143742Z-g6ids_la/user-closure.json",
+  "closed_at": "2026-09-27T14:38:34.145481+00:00"
+}

@@ -1,0 +1,9 @@
+.local/
+inventory.local.json
+rendered/
+secrets/
+*.key
+*.pcap
+*.pcapng
+__pycache__/
+*.pyc

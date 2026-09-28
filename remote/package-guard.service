@@ -1,0 +1,16 @@
+[Unit]
+Description=WireGuard MVP new-package transaction rollback lease
+After=local-fs.target
+ConditionPathExists=/root/wgmvp-packages-before/role.env
+
+[Service]
+Type=simple
+ExecStart=/root/wgmvp-packages-before/package-guard.sh watch
+Restart=always
+RestartSec=3s
+KillMode=process
+TimeoutStopSec=10s
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
